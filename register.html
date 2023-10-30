@@ -1,0 +1,309 @@
+<!--<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form | flask-blog</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+        }
+
+        .signup-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        .signup-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .signup-box .user-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .signup-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            outline: none;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .signup-box .user-box input:focus {
+            border-color: #03e9f4;
+        }
+
+        .signup-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .signup-box .user-box input:focus ~ label,
+        .signup-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+
+        /* Apply animation to the Submit button's border and hover effect */
+        .signup-box button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .signup-box button:hover {
+            animation: border-animation 1s infinite linear, hover-animation 0.5s;
+        }
+
+        @keyframes border-animation {
+            0% {
+                border-width: 1px;
+            }
+            50% {
+                border-width: 3px;
+            }
+            100% {
+                border-width: 1px;
+            }
+        }
+
+        @keyframes hover-animation {
+            0% {
+                background: transparent;
+                color: #7b03f4;
+            }
+            100% {
+                background: #2703f4;
+                color: #2d0da3;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="signup-box">
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+        <div class="user-box">
+            <input type="text" class="form-control" id="name" name="name" required="">
+            <label for="name">Name</label>
+        </div>
+        <div class="user-box">
+            <input type="email" class="form-control" id="email" name="email" required="">
+            <label for="email">Email</label>
+        </div>
+        <div class="user-box">
+            <input type="password" class="form-control" id="password" name="password" required="">
+            <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form | flask-blog</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+        }
+
+        .signup-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        .signup-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .signup-box .user-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .signup-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            outline: none;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .signup-box .user-box input:focus {
+            border-color: #03e9f4;
+        }
+
+        .signup-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .signup-box .user-box input:focus ~ label,
+        .signup-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+
+        /* Apply animation to the Submit button's border and hover effect */
+        .signup-box button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .signup-box button:hover {
+            animation: border-animation 1s infinite linear;
+            background: #03e9f4;
+            color: #fff;
+        }
+
+        @keyframes border-animation {
+            0% {
+                border-width: 1px;
+            }
+            50% {
+                border-width: 3px;
+            }
+            100% {
+                border-width: 1px;
+            }
+        }
+
+        /* Style for the Login button */
+        .login-button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-button a {
+            text-decoration: none;
+            color: #03e9f4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="signup-box">
+    <h2>Register</h2>
+    <form action="/register" method="POST" autocomplete='off'>
+        <!-- Form inputs here (same as before) -->
+        <div class="user-box">
+            <input type="text" class="form-control" id="name" name="name" required="" autocomplete="off">
+            <label for="name">Name</label>
+        </div>
+        <div class="user-box">
+            <input type="email" class="form-control" id="email" name="email" required="" autocomplete="off">
+            <label for="email">Email</label>
+        </div>
+        <div class="user-box">
+            <input type="password" class="form-control" id="password" name="password" required=""autocomplete=off>
+            <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+    <div class="login-button">
+        <a href="/login">Already have an account? Login</a>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function () {
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+    });
+</script>
+
+</body>
+</html>
+
+
+

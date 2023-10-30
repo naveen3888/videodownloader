@@ -1,0 +1,261 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Download Status</title>
+</head>
+<body>
+    <div class="container">
+        {% if download_type == 'audio' %}
+    <h1>Audio Downloaded Successfully</h1>
+    <p>Please note: The audio has been downloaded in mp4 format as a workaround. Rename the file to .mp3.</p>
+    <a href="{{ url_for('static', filename=video_title+'.mp3') }}" download="{{video_title}}.mp3">Download {{ download_type }}</a>
+            {% else %}
+    <h1>Video Downloaded Successfully</h1>
+    <a href="{{ url_for('static', filename=video_title+'.mp4') }}" download="{{video_title}}.mp4">Download {{ download_type }}</a>
+                {% endif %}
+    </div>
+    
+
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>YT Video Downloader</title>
+</head>
+<body>
+    <div class="container">
+        <h1>YT Video Downloader</h1>
+        <form method="POST">
+            <label for="youtube_url">Enter YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            
+            <label for="download_type">Select Download Type:</label>
+            <select name="download_type" id="download_type">
+                <option value="video">Video</option>
+                <option value="audio">Audio Only</option>
+            </select>
+            
+            <button type="submit">Download</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Downloaded {{ download_type }}:</h2>
+        {% if video_url %}
+            <a href="{{ video_url }}" download>Download {{ download_type }}</a>
+        {% else %}
+            <p>File not available for download.</p>
+        {% endif %}
+    </div>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Download Status</title>
+    <style>
+        /* Custom CSS for background and animations */
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          background: linear-gradient(#243b55, #141e30); /* Change background colors */
+          color: #fff; /* Text color */
+        }
+    
+        .btn {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: #03e9f4;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 10px;
+          letter-spacing: 4px;
+          background: transparent;
+          border: 1px solid transparent;
+          cursor: pointer;
+        }
+    
+        .btn:hover {
+          animation: border-animation 1s infinite linear;
+          background: #03e9f4;
+          color: #fff;
+        }
+    
+        @keyframes border-animation {
+          0% {
+            border-width: 1px;
+          }
+          50% {
+            border-width: 3px;
+          }
+          100% {
+            border-width: 1px;
+          }
+        }
+    
+        .container {
+          text-align: center;
+          padding-top: 100px;
+        }
+    
+        h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        {% if download_type == 'audio' %}
+            <h1>Audio Downloaded Successfully</h1>
+            <p>Please note: The audio has been downloaded in .webm format as a workaround.</p>
+            <a href="{{ url_for('static', filename=video_title+'.webm') }}" download="{{video_title}}.webm">Download Audio</a>
+        {% else %}
+            <h1>Video Downloaded Successfully</h1>
+            <a href="{{ url_for('static', filename=video_title+'.mp4') }}" download="{{video_title}}.mp4">Download Video</a>
+        {% endif %}
+        <button id="clearStorageButton" class="btn btn-danger">Clear Storage</button>
+        <a href="/logout" class="btn btn-dark animated fadeInUp">Logout</a>
+    </div>
+    <script>
+      document.getElementById("clearStorageButton").addEventListener("click", function() {
+          // Use JavaScript to send an AJAX request to the server for clearing storage
+          fetch('/clear_storage', {
+              method: 'POST'
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Handle the response or display a message to the user
+              if (data.success) {
+                  alert('Storage cleared successfully');
+              } else {
+                  alert('Storage could not be cleared');
+              }
+          })
+          .catch(error => {
+              console.error('Error clearing storage:', error);
+          });
+      });
+      </script>
+      
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Download Status</title>
+    <style>
+        /* Custom CSS for background and animations */
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          background: linear-gradient(#243b55, #141e30); /* Change background colors */
+          color: #fff; /* Text color */
+        }
+    
+        .btn {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: #03e9f4;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 10px;
+          letter-spacing: 4px;
+          background: transparent;
+          border: 1px solid transparent;
+          cursor: pointer;
+        }
+    
+        .btn:hover {
+          animation: border-animation 1s infinite linear;
+          background: #03e9f4;
+          color: #fff;
+        }
+    
+        @keyframes border-animation {
+          0% {
+            border-width: 1px;
+          }
+          50% {
+            border-width: 3px;
+          }
+          100% {
+            border-width: 1px;
+          }
+        }
+    
+        .container {
+          text-align: center;
+          padding-top: 100px;
+        }
+    
+        h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      </style>
+      <script>
+        function removeFiles() {
+            // Make an AJAX request to the server to remove files
+            fetch('/remove_files', {
+                method: 'POST',
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Files removed successfully
+                    console.log('Files removed successfully.');
+                } else {
+                    // Error occurred during file removal
+                    console.error('Error removing files.');
+                }
+            })
+            .catch(error => {
+                console.error('An error occurred:', error);
+            });
+        }
+        </script>
+</head>
+<body>
+    <div class="container">
+        {% if download_type == 'audio' %}
+            <h1>Audio Downloaded Successfully</h1>
+            <p>Please note: The audio has been downloaded in .webm format as a workaround.</p>
+            <a href="{{ url_for('static', filename=video_title+'.webm') }}" download="{{video_title}}.webm">Download Audio</a>
+        {% else %}
+            <h1>Video Downloaded Successfully</h1>
+            <a href="{{ url_for('static', filename=video_title+'.mp4') }}" download="{{video_title}}.mp4">Download Video</a>
+        {% endif %}
+        <a href="/logout" class="btn btn-dark animated fadeInUp">Logout</a>
+        <button onclick="removeFiles()">Remove Files</button>
+
+    </div>
+  
+    </body>
+</html>
+

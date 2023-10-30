@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Audio Download</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Download</h1>
+        <p>Audio Title: {{ audio_title }}</p>
+        <a href="{{ audio_url }}" download>Download Audio</a>
+        <a href="{{ url_for('video_downloader') }}">Back to Video Downloader</a>
+    </div>
+</body>
+</html>

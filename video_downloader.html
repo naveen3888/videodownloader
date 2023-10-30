@@ -1,0 +1,378 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: {% if 'success' in message %}green{% elif 'danger' in message %}red{% else %}blue{% endif %};">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/video_downloader">
+        <label for="youtube_url">YouTube URL:</label>
+        <input type="text" name="youtube_url" id="youtube_url" required>
+        <br>
+        <button type="submit">Download Video</button>
+    </form>
+
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Video Downloader</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li class="{% if 'success' in message %}success{% elif 'danger' in message %}danger{% else %}info{% endif %}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form class="download-form" method="POST" action="/video_downloader">
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            <br>
+            <button type="submit" class="download-button">Download Video</button>
+        </form>
+
+        <a href="/dashboard" class="dashboard-link">Dashboard</a>
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
+</body>
+</html>
+ -->
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Video Downloader</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li class="{% if 'success' in message %}success{% elif 'danger' in message %}danger{% else %}info{% endif %}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form class="download-form" method="POST" action="/video_downloader">
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            <br>
+            <button type="submit" class="download-button">Download Video</button>
+            <button type="button" id="play-button" class="play-button">Play Video</button>
+        </form>
+
+        <a href="/dashboard" class="dashboard-link">Dashboard</a>
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
+
+    <script>
+        const playButton = document.getElementById('play-button');
+        const youtubeUrl = document.getElementById('youtube_url');
+
+        playButton.addEventListener('click', () => {
+            // Get the YouTube video URL from the input field
+            const videoUrl = youtubeUrl.value;
+
+            // Open the video preview page in a new window with the video URL
+            window.open(`/play?url=${videoUrl}`);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Video Downloader</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li class="{% if 'success' in message %}success{% elif 'danger' in message %}danger{% else %}info{% endif %}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form class="download-form" method="POST" action="/video_downloader">
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            <br>
+            <button type="submit" class="download-button">Download Video</button>
+        </form>
+
+        <div class="thumbnail-container">
+            <img src="{{ video_thumbnail_url }}" alt="Video Thumbnail">
+        </div>
+
+        <a href="/dashboard" class="dashboard-link">Dashboard</a>
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Video Downloader</title>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Video Downloader</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li class="{% if 'success' in message %}success{% elif 'danger' in message %}danger{% else %}info{% endif %}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+        <form class="download-form" method="POST" action="/video_downloader">
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            <br>
+            <button type="submit" class="download-button">Download Video</button>
+        </form>
+
+
+        {% if video_thumbnail_url %}
+        <div class="thumbnail-container">
+            <img src="{{ video_thumbnail_url }}" alt="Video Thumbnail" width="200px" height="200px">
+        </div>
+        {% endif %}
+
+        <a href="/dashboard" class="dashboard-link">Dashboard</a>
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
+</body>
+</html>
+ -->
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Video Downloader</h1>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li class="{% if 'success' in message %}success{% elif 'danger' in message %}danger{% else %}info{% endif %}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <form class="download-form" method="POST" action="/video_downloader">
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            <br>
+            <label for="download_type">Download Type:</label>
+            <select name="download_type" id="download_type">
+                <option value="video">Video</option>
+                <option value="audio">Audio</option>
+            </select>
+            <br>
+            <button type="submit" class="download-button">Download</button>
+        </form>
+
+        {% if video_thumbnail_url %}
+        <div class="thumbnail-container">
+            <img src="{{ video_thumbnail_url }}" alt="Video Thumbnail" width="200px" height="200px">
+        </div>
+
+    
+        {% if video_title %}
+            <a href="{{ url_for('download', video_title=video_title) }}" class="download-link" download>Download the {{ "Video" if download_type == 'video' else "Audio" }}</a>
+        {% endif %}
+        {% endif %}
+
+        <a href="/dashboard" class="dashboard-link">Dashboard</a>
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
+</body>
+</html>-->
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+    <form method="post">
+        <label for="youtube_url">YouTube URL:</label>
+        <input type="text" name="youtube_url" id="youtube_url" required>
+        <label for="download_type">Download Type:</label>
+        <select name="download_type" id="download_type">
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+        </select>
+        <button type="submit">Download</button>
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>YT Video Downloader</title>
+    <style>
+        /* Custom CSS for background and animations */
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          background: linear-gradient(#243b55, #141e30); /* Change background colors */
+          color: #fff; /* Text color */
+        }
+    
+        .btn {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: #03e9f4;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 10px;
+          letter-spacing: 4px;
+          background: transparent;
+          border: 1px solid transparent;
+          cursor: pointer;
+        }
+    
+        .btn:hover {
+          animation: border-animation 1s infinite linear;
+          background: #03e9f4;
+          color: #fff;
+        }
+    
+        @keyframes border-animation {
+          0% {
+            border-width: 1px;
+          }
+          50% {
+            border-width: 3px;
+          }
+          100% {
+            border-width: 1px;
+          }
+        }
+    
+        .container {
+          text-align: center;
+          padding-top: 100px;
+        }
+    
+        h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YT Video Downloader</h1>
+        <form method="POST">
+            <label for="youtube_url">Enter YouTube URL:</label>
+            <input type="text" name="youtube_url" id="youtube_url" required>
+            
+            <label for="download_type">Select Download Type:</label>
+            <select name="download_type" id="download_type">
+                <option value="video">Video</option>
+                <option value="audio">Audio Only</option>
+            </select>
+
+            
+
+            <button type="submit">Download</button>
+        </form>
+
+        <a href="/logout" class="btn btn-dark animated fadeInUp">Logout</a>
+    </div>
+</body>
+</html>
